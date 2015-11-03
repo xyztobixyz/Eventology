@@ -4,7 +4,7 @@
 // declare dependency to angular (similar to import in java)
 define(['frameworks/angular'], function (Angular) {
 
-    // Create new empty app/module named 'lafete'
+    // Create new empty app/module named 'Eventology'
     var Eventology = Angular.module('Eventology', []);
 
     // export module to use it in other classes
