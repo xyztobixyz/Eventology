@@ -16,7 +16,7 @@ require.config({
 });
 
 
-require(['angular', 'app/modules/Eventology'], function (Angular, Eventology) {
+require(['angular', 'app/modules/Eventology', 'app/controllers/EventListController'], function (Angular, Eventology, EventListController) {
     Angular.element(document).ready(function() {
         Angular.bootstrap(document, [Eventology.name]);
     });
