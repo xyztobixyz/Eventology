@@ -5,7 +5,8 @@ require.config({
     // base url relative to the index.html
     baseUrl: './',
     path:{
-        'frameworks/angular': 'frameworks/angular/angular.min', 'app': 'classes'
+        'frameworks/angular': 'frameworks/angular/angular.min',
+        'app': 'classes'
     },
     shim:{
         'frameworks/angular':{
@@ -14,12 +15,9 @@ require.config({
     }
 });
 
-define(['frameworks/angular'], function (angular) {
-    var app = angular.module("Eventology");
-    return angular.bootstrap(app);
-});
 
-//We need to
-define(['frameworks/angular', 'app/modules/Eventology'], function (Angular, Eventology){
-    return Angular.bootstrap(Eventology);
+require(['angular', 'app/modules/Eventology'], function (Angular, Eventology) {
+    Angular.element(document).ready(function() {
+        Angular.bootstrap(document, [Eventology.name]);
+    });
 });
