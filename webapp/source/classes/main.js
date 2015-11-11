@@ -4,12 +4,12 @@
 require.config({
     // base url relative to the index.html
     baseUrl: './',
-    paths:{
+    paths: {
         'frameworks/angular': 'frameworks/angular/angular.min',
         'app': 'classes'
     },
-    shim:{
-        'frameworks/angular':{
+    shim: {
+        'frameworks/angular': {
             exports: 'angular'
         }
     }

@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Eventology</title>
+		<script src="./libraries/requirejs/require-js.min.js" data-main="./classes/main.js"></script>
 	</head>
 	<body>
-		<h2>Events</h2>
-		<ul data-ng-controller="EventListController">
-			<li data-ng-repeat="event in events">{{event.name}}, {{event.place}}</li>
-		</ul>
-		<script src="./libraries/requirejs/require-js.min.js" data-main="./classes/main.js"></script>
-
+		<div data-ng-app="eventology">
+			<h2>Events</h2>
+			<ul data-ng-controller="EventListController">
+				<li data-ng-repeat="event in events">{{event.name}}, {{event.place}}</li>
+			</ul>
+		</div>
 	</body>
 </html>
