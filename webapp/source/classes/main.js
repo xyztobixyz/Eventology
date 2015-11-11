@@ -4,7 +4,7 @@
 require.config({
     // base url relative to the index.html
     baseUrl: './',
-    path:{
+    paths:{
         'frameworks/angular': 'frameworks/angular/angular.min',
         'app': 'classes'
     },
@@ -15,8 +15,8 @@ require.config({
     }
 });
 
-
-require(['angular', 'app/modules/Eventology', 'app/controllers/EventListController'], function (Angular, Eventology, EventListController) {
+require(['frameworks/angular', 'app/modules/Eventology', 'app/controllers/EventListController'], function (Angular, Eventology, EventListController) {
+    var app=Angular.module("Eventology");
     Angular.element(document).ready(function() {
         Angular.bootstrap(document, [Eventology.name]);
     });
