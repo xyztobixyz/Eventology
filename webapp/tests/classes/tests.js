@@ -10,7 +10,7 @@ require.config({
         'tests': 'classes',
         'libraries/jasmine': ['libraries/jasmine/jasmine'],
         'libraries/jasmine-html': ['libraries/jasmine/jasmine-html'],
-        'libraries/jasmine-boot': ['libraries/jasmine/jasmine-boot']
+        'libraries/jasmine-boot': ['libraries/jasmine/boot']
     },
     shim:{
         'frameworks/angular':{
