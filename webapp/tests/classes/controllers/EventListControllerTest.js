@@ -1,15 +1,15 @@
 /**
  * Created by Phil on 28.10.2015.
  */
-    define([],function(){
+    define(['app/controllers/eventListController'],function(EventListController){
         'use strict';
-        var EventListController = function($scope){
-            this.scope = $scope;
-            this.scope.events=[
-                {name: 'Lunch', place: 'Rapperswil', date: new Date('2015-10-10T10:00:00.000Z')},
-                {name: 'Dinner', place: 'Zürich', date: new Date('2015-04-05T16:00:00.000Z')},
-                {name: 'Dinner', place: 'Rapperswil', date: new Date('2015-12-08T17:00:00.000Z')}
-            ];
-        };
-        return EventListController;
+        describe('EventListControllerTest', function(){
+            describe('property scope', function(){
+                it('contains 3 events', function(){
+                    var scope={};
+                    var EventListController=new EventListController(scope);
+                    expect(3).toBe(EventListControllerTest.scope.events.length);
+                })
+            })
+        })
     });
