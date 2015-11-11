@@ -1,9 +1,0 @@
-diff a/webapp/source/classes/main.js b/webapp/source/classes/main.js	(rejected hunks)
-@@ -16,7 +16,6 @@
- });
- 
- require(['frameworks/angular', 'app/modules/Eventology', 'app/controllers/EventListController'], function (Angular, Eventology, EventListController) {
--    var app=Angular.module("Eventology");
-     var app=Angular.module("eventology");
-     Angular.element(document).ready(function() {
-         Angular.bootstrap(document, [Eventology.name]);
