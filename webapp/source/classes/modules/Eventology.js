@@ -2,7 +2,7 @@
  * Created by Phil on 28.10.2015.
  */
 // declare dependency to angular (similar to import in java)
-define(['frameworks/angular','app/controllers/eventListController'], function (Angular, eventListController) {
+define(['frameworks/angular','app/controllers/eventListController','frameworks/angularRoute'], function (Angular, eventListController) {
 
     // Create new empty app/module named 'Eventology'
     var eventology = Angular.module('eventology', ['ng-Route']);

@@ -6,17 +6,20 @@ require.config({
     baseUrl: './',
     paths: {
         'frameworks/angular': 'frameworks/angular/angular.min',
+        'frameworks/angularRoute': 'frameworks/angular/angular-route.js',
         'app': 'classes'
     },
     shim: {
         'frameworks/angular': {
             exports: 'angular'
+        },
+        'frameworks/angularRoute':{
+            deps:['frameworks/angular']
         }
     }
 });
 
 require(['frameworks/angular', 'app/modules/eventology', 'app/controllers/eventListController'], function (Angular, eventology, eventListController) {
-    var app=Angular.module("eventology");
     Angular.element(document).ready(function() {
         Angular.bootstrap(document, [eventology.name]);
     });
