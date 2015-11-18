@@ -5,7 +5,7 @@
 define(['frameworks/angular','app/controllers/eventListController'], function (Angular, eventListController) {
 
     // Create new empty app/module named 'Eventology'
-    var eventology = Angular.module('eventology', []);
+    var eventology = Angular.module('eventology', ['ng-Route']);
     eventology.controller('eventListController',eventListController);
     eventListController.$inject=['$scope'];
 
