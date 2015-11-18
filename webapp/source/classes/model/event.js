@@ -2,7 +2,8 @@
  * Created by Phil on 17.11.2015.
  */
 define([], function(){
-    var event = function(name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
+    var event = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
+        this.id=id;
         this.name = name;
         this.description = description;
         this.targetGroup = targetGroup;
