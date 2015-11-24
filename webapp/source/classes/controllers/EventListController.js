@@ -5,7 +5,7 @@
         'use strict';
         var eventListController = function($scope, eventStore){
             this.scope = $scope;
-            this.scope.events=eventStore.getAllEvents(function(events){
+            eventStore.getAllEvents(function(events){
                 this.scope.events = events;
             }.bind(this), function(){});
         };

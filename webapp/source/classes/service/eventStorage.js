@@ -17,18 +17,21 @@ define(['app/model/event'], function(EventModel){
                 })
                 .error(onError);
         };
-        this.getSingleEvent=function(eventId, onSuccess, onError){
-           var response=$http.get(serverURL+path+"/events"+eventId);
-           response.success(onSuccess);
-           response.error(onError);
-       };
+        this.getEvent=function(eventId, onSuccess, onError){
+            $http.get(serverURL+path+"/events"+eventId)
+                .success(function(data){
+                    onSuccess(EventModel.createFromDTO(data));
+                })
+                .error(onError)
+            ;
+        };
        this.addEvent=function(event, onSuccess, onError){
-           var response=$http.post(serverURL+path+"/events",event);
+           var response=$http.post(serverURL+path+"/events/",event);
            response.success(onSuccess);
            response.error(onError);
        };
        this.addGuest=function(eventId, guest, onSuccess, onError){
-           var response=$http.post(serverURL+path+"/events"+eventId+"/guests",guest);
+           var response=$http.post(serverURL+path+"/events/"+eventId+"/guests",guest);
            response.success(onSuccess);
            response.error(onError);
        };
