@@ -6,7 +6,7 @@ require.config({
     baseUrl: './',
     paths: {
         'frameworks/angular': 'frameworks/angular/angular.min',
-        'frameworks/angularRoute': 'frameworks/angular/angular-route.js',
+        'frameworks/angularRoute': 'frameworks/angular/angular-route',
         'app': 'classes'
     },
     shim: {

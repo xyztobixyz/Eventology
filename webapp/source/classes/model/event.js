@@ -2,7 +2,7 @@
  * Created by Phil on 17.11.2015.
  */
 define([], function(){
-    var event = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
+    var EventModel = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
         this.id=id;
         this.name = name;
         this.description = description;
@@ -28,5 +28,23 @@ define([], function(){
             }
         });
     };
-    return event;
+
+    EventModel.createFromDTO = function(eventDTO) {
+        var event = new EventModel(
+            eventDTO.id,
+            eventDTO.name,
+            eventDTO.description,
+            eventDTO.targetGroup,
+            eventDTO.contributionsDescription,
+            eventDTO.location,
+            eventDTO.times,
+            eventDTO.maximalAmoutOfGuests
+        );
+        if(eventDTO.guests) {
+            event.guests = eventDTO.guests;
+        }
+        return event;
+    };
+
+    return EventModel;
 });

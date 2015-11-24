@@ -2,13 +2,24 @@
  * Created by Phil on 28.10.2015.
  */
 // declare dependency to angular (similar to import in java)
-define(['frameworks/angular','app/controllers/eventListController','frameworks/angularRoute'], function (Angular, eventListController) {
+define(['frameworks/angular','app/controllers/eventListController', 'app/service/eventStorage','frameworks/angularRoute'], function (Angular, eventListController, eventStorage) {
 
-    // Create new empty app/module named 'Eventology'
-    var eventology = Angular.module('eventology', ['ng-Route']);
+    var eventology = Angular.module('eventology', ['ngRoute']);
+
+    eventology.service('eventStorage', eventStorage);
     eventology.controller('eventListController',eventListController);
-    eventListController.$inject=['$scope'];
 
-    // export module to use it in other classes
+
+    eventology.config(function($routeProvider) {
+        $routeProvider
+            .when('/list', {
+                controller: 'eventListController',
+                templateUrl: '/views/list.html'
+            })
+            .otherwise({
+                redirectTo: '/list'
+            });
+    });
+
     return eventology;
 });
