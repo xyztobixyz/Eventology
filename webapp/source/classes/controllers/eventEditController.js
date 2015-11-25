@@ -7,7 +7,7 @@ define([],function(){
             this.scope.event = event;
 
             this.scope.create = function(event){
-                eventStore.editEvent(event, function(event){
+                eventStore.editEvent(event, function(){
                     $location.path("/events/"+event.id);
                 }.bind(this), function(){})
             };
