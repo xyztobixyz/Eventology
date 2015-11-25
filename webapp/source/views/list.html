@@ -1,6 +1,6 @@
 <div>
     <h2>Events</h2>
     <ul data-ng-controller="eventListController">
-        <li data-ng-repeat="event in events">{{event.name}}, {{event.place}}</li>
+        <li data-ng-repeat="event in events"><a href="#/events/{{event.id}}">{{event.name}}</a></li>
     </ul>
 </div>

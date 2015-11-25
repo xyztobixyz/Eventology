@@ -18,23 +18,28 @@ define(['app/model/event'], function(EventModel){
                 .error(onError);
         };
         this.getEvent=function(eventId, onSuccess, onError){
-            $http.get(serverURL+path+"/events"+eventId)
+            $http.get(serverURL+path+"/events/"+eventId)
                 .success(function(data){
                     onSuccess(EventModel.createFromDTO(data));
                 })
                 .error(onError)
             ;
         };
-       this.addEvent=function(event, onSuccess, onError){
-           var response=$http.post(serverURL+path+"/events/",event);
-           response.success(onSuccess);
-           response.error(onError);
-       };
-       this.addGuest=function(eventId, guest, onSuccess, onError){
-           var response=$http.post(serverURL+path+"/events/"+eventId+"/guests",guest);
-           response.success(onSuccess);
-           response.error(onError);
-       };
+        this.addEvent=function(event, onSuccess, onError){
+            $http.post(serverURL+path+"/events", event)
+                .success(onSuccess)
+                .error(onError);
+        };
+        this.editEvent=function(event, onSuccess, onError){
+            $http.post(serverURL+path+"/events/"+event.id, event)
+                .success(onSuccess)
+                .error(onError);
+        };
+        this.addGuest=function(eventId, guest, onSuccess, onError){
+            var response=$http.post(serverURL+path+"/events/"+eventId+"/guests",guest);
+            response.success(onSuccess);
+            response.error(onError);
+        };
     };
     storageService.$inject = ['$http'];
 
