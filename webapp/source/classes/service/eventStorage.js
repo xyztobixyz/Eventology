@@ -1,7 +1,7 @@
 /**
  * Created by Phil on 18.11.2015.
  */
-define(['app/model/event'], function(EventModel){
+define(['app/model/event', 'app/model/guest'], function(EventModel, GuestModel){
     "use strict";
     var serverURL="http://127.0.0.1:8080";
     var path= "/api";
@@ -34,6 +34,14 @@ define(['app/model/event'], function(EventModel){
             $http.post(serverURL+path+"/events/"+event.id, event)
                 .success(onSuccess)
                 .error(onError);
+        };
+        this.getGuest=function(eventId, guestId, onSuccess, onError){
+            $http.get(serverURL+path+"/events/"+eventId+"/guests/"+guestId)
+                .success(function(data){
+                    onSuccess(GuestModel.createFromDTO(data));
+                })
+                .error(onError)
+            ;
         };
         this.addGuest=function(eventId, guest, onSuccess, onError){
             $http.post(serverURL+path+"/events/"+eventId+"/guests",guest)

@@ -4,11 +4,11 @@
 
 define([], function(){
     var GuestModel = function(id, name, contribution, comment, cancelled) {
-        this.id=id;
-        this.name = name;
-        this.contribution = contribution;
-        this.comment=comment;
-        this.cancelled=cancelled;
+        this.id=id || Math.floor((Math.random() * 10000000000) + 1000000000);
+        this.name = name || "";
+        this.contribution = contribution || "";
+        this.comment=comment || "";
+        this.cancelled=cancelled || false;
     };
 
     GuestModel.createFromDTO = function(guestDTO) {

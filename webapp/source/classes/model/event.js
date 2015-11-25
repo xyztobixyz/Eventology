@@ -3,7 +3,7 @@
  */
 define([], function(){
     var EventModel = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
-        this.id=id || Math.floor((Math.random() * 1000000000) + 10000000);
+        this.id=id || Math.floor((Math.random() * 1000000000) + 100000000);
         this.name = name || "";
         this.description = description || "";
         this.targetGroup = targetGroup || "";
