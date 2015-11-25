@@ -36,9 +36,14 @@ define(['app/model/event'], function(EventModel){
                 .error(onError);
         };
         this.addGuest=function(eventId, guest, onSuccess, onError){
-            var response=$http.post(serverURL+path+"/events/"+eventId+"/guests",guest);
-            response.success(onSuccess);
-            response.error(onError);
+            $http.post(serverURL+path+"/events/"+eventId+"/guests",guest)
+                .success(onSuccess)
+                .error(onError);
+        };
+        this.editGuest=function(eventId, guest, onSuccess, onError){
+            $http.post(serverURL+path+"/events/"+eventId+"/guests/"+guest.id,guest)
+                .success(onSuccess)
+                .error(onError);
         };
     };
     storageService.$inject = ['$http'];

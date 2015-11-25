@@ -4,10 +4,10 @@ define(['app/model/event'],function(EventModel){
         this.scope = $scope;
 
         this.scope.event = new EventModel();
-
+        console.log(this.scope.event);
         this.scope.create = function(newEvent){
             eventStore.addEvent(newEvent, function(){
-                $location.path("/events/"+newEvent.id);
+                //$location.path("/events/"+newEvent.id);
             }.bind(this), function(){})
         };
     };

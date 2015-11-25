@@ -3,14 +3,14 @@
  */
 define([], function(){
     var EventModel = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
-        this.id=id;
-        this.name = name;
-        this.description = description;
-        this.targetGroup = targetGroup;
+        this.id=id || Math.floor((Math.random() * 1000000000) + 10000000);
+        this.name = name || "";
+        this.description = description || "";
+        this.targetGroup = targetGroup || "";
         this.contributionsDescription = contributionsDescription;
-        this.location = location;
-        this.times = times;
-        this.maximalAmountOfGuests = maximalAmountOfGuests;
+        this.location = location || {name:"", street:"", zipCode:"", city: ""};
+        this.times = times || {};
+        this.maximalAmountOfGuests = maximalAmountOfGuests || 100;
         Object.defineProperty(this, 'begin', {
             get:function() {
                 return this.times.begin;
@@ -38,7 +38,7 @@ define([], function(){
             eventDTO.contributionsDescription,
             eventDTO.location,
             eventDTO.times,
-            eventDTO.maximalAmoutOfGuests
+            eventDTO.maximalAmountOfGuests
         );
         if(eventDTO.guests) {
             event.guests = eventDTO.guests;

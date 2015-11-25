@@ -20,13 +20,13 @@ define(['frameworks/angular','app/controllers/eventListController', 'app/control
                 controller: 'eventListController',
                 templateUrl: '/views/list.html'
             })
-            .when('/events/:eventId', {
-                controller: 'eventDetailController',
-                templateUrl: '/views/detail.html'
-            })
             .when('/events/new', {
                 controller: 'eventCreateController',
                 templateUrl: '/views/edit.html'
+            })
+            .when('/events/:eventId', {
+                controller: 'eventDetailController',
+                templateUrl: '/views/detail.html'
             })
             .when('/events/edit/:eventId', {
                 controller: 'eventEditController',
