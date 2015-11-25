@@ -1,0 +1,25 @@
+<form action="#">
+    <div>
+        <label>Name</label>
+        <input data-ng-model="guest.name" />
+    </div>
+
+    <div>
+        <label>Beitrag</label>
+        <input data-ng-model="guest.contribution" />
+    </div>
+
+    <div>
+        <label>Kommentar</label>
+        <input data-ng-model="guest.comment" />
+    </div>
+
+    <div>
+        <label>Abgesagt</label>
+        <input data-ng-model="guest.cancelled" />
+    </div>
+
+    <div>
+        <input type="submit" data-ng-click="create(guest)">
+    </div>
+</form>
