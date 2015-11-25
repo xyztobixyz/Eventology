@@ -1,6 +1,34 @@
 <div>
-    <h2>Event</h2>
-    <ul data-ng-controller="eventDetailController">
-        <li>{{event.name}}, {{event.location}}, {{event.times}}, {{event.description}}, {{event.targetGroup}}</li>
+    <h1>{{event.name}}</h1>
+    <ul >
+        <li>
+            Adresse:
+            {{event.location.name}}<br>
+            {{event.location.street}}<br>
+            {{event.location.zipCode}} {{event.location.city}}
+        </li>
+        <li>
+            Von:{{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}}<br>
+            Bis:{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
+        </li>
+        <li>
+            {{event.description}}
+        </li>
+        <li>
+            {{event.targetGroup}}
+        </li>
+        <li>
+            {{event.maximalAmountOfGuests}}
+        </li>
+        <li>
+            {{event.contributionsDescription}}
+        </li>
+        <div ng-repeat="event.guests as guest">
+           <ul>
+               <li>
+                   {{guest.name}}
+               </li>
+           </ul>
+        </div>
     </ul>
 </div>
