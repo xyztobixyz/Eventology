@@ -1,6 +1,14 @@
+<div class="listTitle">
+    <center>
+        <h1>Upcoming Events</h1><h3>presented by Eventology</h3>
+    </center>
+</div>
 <div>
-    <h1>Events</h1>
-    <ul data-ng-controller="eventListController">
-        <li data-ng-repeat="event in events"><a href="#/events/{{event.id}}">{{event.name}}</a></li>
-    </ul>
+    <div data-ng-controller="eventListController">
+        <div data-ng-repeat="event in events" class=".btn">
+            <a href="#/events/{{event.id}}">{{event.name}} at {{event.location.name}}
+            from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
+            </a>
+        </div>
+    </div>
 </div>
