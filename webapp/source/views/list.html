@@ -1,14 +1,20 @@
+<center>
 <div class="listTitle">
-    <center>
-        <h1>Upcoming Events</h1><h3>presented by Eventology</h3>
-    </center>
+    <h1>Upcoming Events</h1><h3>presented by Eventology</h3>
 </div>
 <div>
     <div data-ng-controller="eventListController">
-        <div data-ng-repeat="event in events" class=".btn">
-            <a href="#/events/{{event.id}}">{{event.name}} at {{event.location.name}}
-            from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
+        <div data-ng-repeat="event in events" class="flex-item">
+            <a href="#/events/{{event.id}}">
+                <button type="button" class="btn btn-group">{{event.name}} at {{event.location.name}}<br>
+                    from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to
+                    {{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
+                </button>
             </a>
         </div>
+        <a href="#/events/new">
+            <button type="submit" class="btn btn">Add new Event</button>
+        </a>
     </div>
 </div>
+</center>

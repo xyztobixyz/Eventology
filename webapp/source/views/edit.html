@@ -1,35 +1,40 @@
 <form action="#">
-    <div>
+    <h1>Neuen Event erstellen</h1>
+    <div class="eingabefeld">
         <label>Eventname</label>
         <input data-ng-model="event.name" />
     </div>
 
-    <div>
+    <div class="eingabefeld">
         <label>Beschreibung</label>
         <input data-ng-model="event.description" />
     </div>
 
-    <div>
+    <div class="eingabefeld">
         <label>Zielgruppe</label>
         <input data-ng-model="event.targetGoup" />
     </div>
 
-    <div>
-        <label>Ort</label>
-        <input data-ng-model="event.location" />
+    <div class="eingabefeld">
+        <label>Ort:</label><br>
+        <label>Name</label><input data-ng-model="event.location.name" /><br>
+        <label>Adresse</label><input data-ng-model="event.location.street" /><br>
+        <label>Postleitzahl</label><input data-ng-model="event.location.zipcode" /><br>
+        <label>Ortschaft</label><input data-ng-model="event.location.city" />
     </div>
 
-    <div>
-        <label>Zeiten</label>
-        <input data-ng-model="event.times" />
+    <div class="eingabefeld">
+        <label>Zeiten, Format:(dd.MM.yyy hh:mm)</label><br>
+        <label>Von:</label><input data-ng-model="event.times.begin" /><br>
+        <label>Bis:</label><input data-ng-model="event.times.end" />
     </div>
 
-    <div>
+    <div class="eingabefeld">
         <label>Beitrag</label>
         <input data-ng-model="event.contributionsDescription" />
     </div>
 
-    <div>
+    <div class="eingabefeld">
         <label>max Anz. Gäste</label>
         <input data-ng-model="event.maximalAmountOfGuests" />
     </div>
