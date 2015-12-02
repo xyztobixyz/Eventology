@@ -4,7 +4,7 @@
 </div>
 <div>
     <div data-ng-controller="eventListController">
-        <div data-ng-repeat="event in events" class="flex-item">
+        <div data-ng-repeat="event in events">
             <a href="#/events/{{event.id}}">
                 <button type="button" class="btn btn-group">{{event.name}} at {{event.location.name}}<br>
                     from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to

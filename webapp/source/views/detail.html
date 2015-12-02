@@ -23,15 +23,20 @@
         <li>
             {{event.contributionsDescription}}
         </li>
-        <div ng-repeat="event.guests as guest">
-           <ul>
-               <li>
-                   {{guest.name}}
-               </li>
-           </ul>
+        <li><label>Gäste:</label>
+        <div ng-repeat="guest in event.guests">
+            <div ng-show="!guest.cancelled">
+                <a href="#/events/{{event.id}}/guests/{{guest.id}}">
+                    {{guest.name}}
+                </a>
+            </div>
         </div>
-        <a href="#/events/delete">
-            <button type="button" class="btn btn">Event löschen</button>
+        </li>
+        <a href="#/events/{{event.id}}/guests/new">
+            <button type="submit" class="btn btn">Anmelden</button>
+        </a>
+        <a href="#/events/edit/{{event.id}}">
+            <button type="submit" class="btn btn">Event bearbeiten</button>
         </a>
     </ul>
 </div>
