@@ -1,26 +1,25 @@
 <form action="#">
-    <div>
-        <label>Name</label>
-        <input data-ng-model="guest.name" />
+    <div class="row">
+        <div class="col-xs-6"><p>Name</p></div>
+        <div class="col-xs-6"><input data-ng-model="guest.name" /></div>
     </div>
 
-    <div>
-        <label>Beitrag</label>
-        <input data-ng-model="guest.contribution" />
+    <div class="row">
+        <div class="col-xs-6"><p>Beitrag</p></div>
+        <div class="col-xs-6"><input data-ng-model="guest.contribution" /></div>
     </div>
 
-    <div>
-        <label>Kommentar</label>
-        <input data-ng-model="guest.comment" />
+    <div class="row">
+        <div class="col-xs-6"><p>Kommentar</p></div>
+        <div class="col-xs-6"><input data-ng-model="guest.comment" /></div>
     </div>
 
-    <div>
-        <label>Absagen</label>
-        <input type="checkbox" data-ng-model="guest.cancelled" />
-        {{guest.cancelled}}
+    <div class="row">
+        <div class="col-xs-6"><p>Absagen</p></div>
+        <div class="col-xs-6"><input type="checkbox" data-ng-model="guest.cancelled" />{{guest.cancelled}}</div>
     </div>
 
-    <div>
-        <input type="submit" data-ng-click="create(guest)">
+    <div class="row">
+        <div class="col-xs-6"><input type="submit" data-ng-click="create(guest)"></div>
     </div>
 </form>

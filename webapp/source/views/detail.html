@@ -1,16 +1,25 @@
-<div>
-    <h1>{{event.name}}</h1>
-    <ul >
-        <li>
-            Adresse:
-            {{event.location.name}}<br>
-            {{event.location.street}}<br>
-            {{event.location.zipCode}} {{event.location.city}}
-        </li>
-        <li>
-            Von:{{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}}<br>
-            Bis:{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
-        </li>
+<h1>{{event.name}}</h1>
+<div class="row">
+    <div class="col-xs-6"><p>Adresse:</p></div>
+    <div class="col-xs-6">
+        <div class="row">{{event.location.name}}</div>
+        <div class="row">{{event.location.street}}</div>
+        <div class="row">{{event.location.zipCode}}</div>
+        <div class="row">{{event.location.city}}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Von:</p></div>
+    <div class="col-xs-6">{{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}}</div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Bis:</p></div>
+    <div class="col-xs-6">{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}</div>
+</div>
+<div class="row">{{event.description}}</div>
+
+
+
         <li>
             {{event.description}}
         </li>
