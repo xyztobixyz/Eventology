@@ -3,12 +3,12 @@
  */
 
 define([], function(){
-    var GuestModel = function(id, name, contribution, comment, cancelled) {
+    var GuestModel = function(id, name, contribution, comment, canceled) {
         this.id=id || Math.floor((Math.random() * 10000000000) + 1000000000);
         this.name = name || "";
         this.contribution = contribution || "";
         this.comment=comment || "";
-        this.cancelled=cancelled || false;
+        this.canceled=canceled || false;
     };
 
     GuestModel.createFromDTO = function(guestDTO) {
@@ -17,7 +17,7 @@ define([], function(){
             guestDTO.name,
             guestDTO.contribution,
             guestDTO.comment,
-            guestDTO.cancelled
+            guestDTO.canceled
         );
         return guest;
     };
