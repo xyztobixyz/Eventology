@@ -16,36 +16,47 @@
     <div class="col-xs-6"><p>Bis:</p></div>
     <div class="col-xs-6">{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}</div>
 </div>
-<div class="row">{{event.description}}</div>
-
-
-
-        <li>
-            {{event.description}}
-        </li>
-        <li>
-            {{event.targetGroup}}
-        </li>
-        <li>
-            {{event.maximalAmountOfGuests}}
-        </li>
-        <li>
-            {{event.contributionsDescription}}
-        </li>
-        <li><label>Gäste:</label>
-        <div ng-repeat="guest in event.guests">
-            <div ng-show="!guest.cancelled">
-                <a href="#/events/{{event.id}}/guests/{{guest.id}}">
-                    {{guest.name}}
-                </a>
-            </div>
-        </div>
-        </li>
-        <a href="#/events/{{event.id}}/guests/new">
-            <button type="submit" class="btn btn">Anmelden</button>
+<div class="row">
+    <div class="col-xs-6"><p>Beschreibung</p></div>
+    <div class="col-xs-6">
+        {{event.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Zielgruppe</p></div>
+    <div class="col-xs-6">
+        {{event.targetGroup}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Gästemaximum</p></div>
+    <div class="col-xs-6">
+        {{event.maximalAmountOfGuests}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Beitragsmöglichkeit</p></div>
+    <div class="col-xs-6">
+        {{event.contributionsDescription}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6"><p>Gäste:</p></div>
+    <div class="col-xs-6" ng-repeat="guest in event.guests">
+        <a href="#/events/{{event.id}}/guests/{{guest.id}}">
+            {{guest.name}}
         </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
         <a href="#/events/edit/{{event.id}}">
             <button type="submit" class="btn btn">Event bearbeiten</button>
         </a>
-    </ul>
+    </div>
+    <div class="col-xs-6">
+        <a href="#/events/{{event.id}}/guests/new">
+            <button type="submit" class="btn btn">Anmelden</button>
+        </a>
+    </div>
 </div>

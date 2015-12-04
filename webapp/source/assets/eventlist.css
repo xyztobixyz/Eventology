@@ -1,11 +1,3 @@
 body{background-image:url("../img_background.jpg")}
-h1{color:navajowhite}
-h2{color:navajowhite}
-h3{color:navajowhite}
-ul{color:navajowhite}
-li{color:navajowhite}
-a{color:navajowhite}
-label{color:navajowhite}
-.flex-item{display: flex}
-.eingabefeld{display: flex}
-.styleContainer{}
+.styleContainer{color: #aaaaaa;}
+.btn{margin-bottom: 5rem; background-color: #761c19;color: #aaaaaa}
