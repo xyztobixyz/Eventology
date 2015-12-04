@@ -5,6 +5,7 @@ h3{color:navajowhite}
 ul{color:navajowhite}
 li{color:navajowhite}
 a{color:navajowhite}
-label{color:navajowhite; font-size: large}
+label{color:navajowhite}
 .flex-item{display: flex}
-eingabefeld{display: flex}
+.eingabefeld{display: flex}
+.styleContainer{}
