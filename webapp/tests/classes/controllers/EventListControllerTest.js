@@ -1,5 +1,5 @@
-define(['app/controllers/eventListController', 'app/controllers/eventDetailController', 'app/service/eventStorage', 'frameworks/angular', 'libraries/angularMocks', ''],
-    function (EventListController, EventDetailController, EventStorage, Angular, AngularMocks) {
+define(['app/controllers/eventListController', 'app/controllers/eventDetailController', 'app/controllers/eventEditController', 'app/controllers/guestEditController', 'app/service/eventStorage', 'frameworks/angular', 'libraries/angularMocks', ''],
+    function (EventListController, EventDetailController, EventEditController, GuestEditController, EventStorage, Angular, AngularMocks) {
         'use strict';
         var serverURL="http://127.0.0.1:8080";
         var path= "/api";
@@ -48,17 +48,97 @@ define(['app/controllers/eventListController', 'app/controllers/eventDetailContr
             beforeEach(AngularMocks.inject(function($injector) {
                 $routeParams = {eventId: 1};
                 $httpBackend.when('GET', serverURL+path+"/events/1").respond(
-                {"id":1,"name":"HSR-Party","description":"Party an der HSR","targetGroup":"Studenten","contributionsDescription":"Kuchen","location":{"name":"HSR","street":"Oberseestrasse","plz":8640,"city":"Rapperswil"},"times":{"begin":"2015-11-15T19:00:00.000Z","end":"2011-11-16T03:00:00.000Z"},"guests":[{"id":1,"name":"Michael","contribution":"Schoggi-Kuchen","comment":"Bin sicher zu früh","canceled":false},{"id":2,"name":"Hans","contribution":"Hotdog-Cake","comment":null,"canceled":false}]}
-                );
+                {
+                    "id":1,
+                    "name":"HSR-Party",
+                    "description":"Party an der HSR",
+                    "targetGroup":"Studenten",
+                    "contributionsDescription":"Kuchen",
+                    "location":{
+                        "name":"HSR",
+                        "street":"Oberseestrasse",
+                        "plz":8640,"city":"Rapperswil"},
+                    "times":{
+                        "begin":"2015-11-15T19:00:00.000Z",
+                        "end":"2011-11-16T03:00:00.000Z"},
+                    "guests":[
+                        {
+                            "id":1,
+                            "name":"Michael",
+                            "contribution":"Schoggi-Kuchen",
+                            "comment":"Bin sicher zu früh",
+                            "canceled":false},
+                        {
+                            "id":2,
+                            "name":"Hans",
+                            "contribution":"Hotdog-Cake",
+                            "comment":null,
+                            "canceled":false}]
+                });
 
                 eventDetailController = new EventDetailController(scope, $routeParams, eventStorage);
                 $httpBackend.flush();
             }));
 
             describe('property scope', function() {
+                it('has correct event name and id', function() {
+                    expect(1).toBe(eventDetailController.scope.event.id);
+                    expect("HSR-Party").toBe(eventDetailController.scope.event.name);
+                });
+
                 it('event name and id', function() {
                     expect(1).toBe(eventDetailController.scope.event.id);
                     expect("HSR-Party").toBe(eventDetailController.scope.event.name);
+                });
+            });
+        });
+
+        describe('GuestEditController', function() {
+            var guestEditController;
+
+            beforeEach(AngularMocks.inject(function($injector) {
+                $routeParams = {eventId: 1, guestId: 1};
+                $httpBackend.when('GET', serverURL+path+"/events/1/guests/1").respond(
+                    {
+                        "id":1,
+                        "name":"Michael",
+                        "contribution":"Schoggi-Kuchen",
+                        "comment":"Bin sicher zu früh",
+                        "canceled":false});
+
+                guestEditController = new GuestEditController(scope, $routeParams, $location, eventStorage);
+                $httpBackend.flush();
+            }));
+
+            describe('property scope', function() {
+                it('event name and id', function() {
+                    expect(1).toBe(guestEditController.scope.guest.id);
+                    expect("Michael").toBe(guestEditController.scope.guest.name);
+                });
+            });
+        });
+
+        describe('EventEditController', function() {
+            var eventEditController;
+
+            beforeEach(AngularMocks.inject(function($injector) {
+                $routeParams = {eventId: 1, guestId: 1};
+                $httpBackend.when('GET', serverURL+path+"/events/1").respond(
+                    {"id":1,"name":"HSR-Party","description":"Party an der HSR","targetGroup":"Studenten","contributionsDescription":"Kuchen","location":{"name":"HSR","street":"Oberseestrasse","plz":8640,"city":"Rapperswil"},"times":{"begin":"2015-11-15T19:00:00.000Z","end":"2011-11-16T03:00:00.000Z"},"guests":[{"id":1,"name":"Michael","contribution":"Schoggi-Kuchen","comment":"Bin sicher zu früh","canceled":false},{"id":2,"name":"Hans","contribution":"Hotdog-Cake","comment":null,"canceled":false}]});
+
+                eventEditController = new EventEditController(scope, $routeParams, eventStorage, $location);
+                $httpBackend.flush();
+            }));
+
+            describe('property scope', function() {
+                it('has correct event name and id', function() {
+                    expect(1).toBe(eventEditController.scope.event.id);
+                    expect("HSR-Party").toBe(eventEditController.scope.event.name);
+                });
+
+                it('event name and id', function() {
+                    expect(1).toBe(eventEditController.scope.event.id);
+                    expect("HSR-Party").toBe(eventEditController.scope.event.name);
                 });
             });
         });
