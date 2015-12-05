@@ -1,68 +1,64 @@
 <form action="#">
     <h1>Neuen Event erstellen</h1>
     <div class="row">
-        <div class="col-xs-6"><p>Eventname</p></div>
-        <div class="col-xs-6"><input data-ng-model="event.name" /></div>
+        <div class="col-xs-2"><p>Eventname</p></div>
+        <div class="col-xs-2"><input data-ng-model="event.name" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><p>Beschreibung</p></div>
-        <div class="col-xs-6"><input data-ng-model="event.description" /></div>
+        <div class="col-xs-2"><p>Beschreibung</p></div>
+        <div class="col-xs-2"><input data-ng-model="event.description" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><p>Zielgruppe</p></div>
-        <div class="col-xs-6"><input data-ng-model="event.targetGoup" /></div>
+        <div class="col-xs-2"><p>Zielgruppe</p></div>
+        <div class="col-xs-2"><input data-ng-model="event.targetGroup" /></div>
+    </div>
+
+        <div class="row">
+            <div class="col-xs-2"><p>Ort:</p></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Name</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.location.name" /></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Adresse</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.location.street" /></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Postleitzahl</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.location.zipcode" /></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Ortschaft</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.location.city" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2"><p>Zeiten</p></div>
+            <div class="col-xs-2"><p>Format:(dd.MM.yyy hh:mm</p></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Von:</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.times.begin" /></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><p>Bis:</p></div>
+            <div class="col-xs-2"><input data-ng-model="event.times.end" /></div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-2"><p>Beitrag</p></div>
+        <div class="col-xs-2"><input data-ng-model="event.contributionsDescription" /></div>
     </div>
 
     <div class="row">
-        <div class="row">
-            <div class="col-xs-6"><p>Ort:</p></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Name</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.location.name" /></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Adresse</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.location.street" /></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Postleitzahl</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.location.zipcode" /></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Ortschaft</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.location.city" /></div>
-        </div>
+        <div class="col-xs-2"><p>max. Anzahl Gäste</p></div>
+        <div class="col-xs-2"><input data-ng-model="event.maximalAmountOfGuests" /></div>
     </div>
 
     <div class="row">
-        <div class="row">
-            <div class="col-xs-6"><p>Zeiten</p></div>
-            <div class="col-xs-6"><p>Format:(dd.MM.yyy hh:mm</p></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Von:</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.times.begin" /></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6"><p>Bis:</p></div>
-            <div class="col-xs-6"><input data-ng-model="event.times.end" /></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-6"><p>Beitrag</p></div>
-        <div class="col-xs-6"><input data-ng-model="event.contributionsDescription" /></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-6"><p>max. Anzahl Gäste</p></div>
-        <div class="col-xs-6"><input data-ng-model="event.maximalAmountOfGuests" /></div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-6"><input type="submit" data-ng-click="create(event)"></div>
+        <div class="col-xs-2"><input type="submit" data-ng-click="create(event)"/></div>
     </div>
 </form>

@@ -1,3 +1,5 @@
 body{background-image:url("../img_background.jpg")}
-.styleContainer{color: #aaaaaa;}
-.btn{margin-bottom: 5rem; background-color: #761c19;color: #aaaaaa}
+.styleContainer{color: #eeeeee}
+.btn{margin-bottom: 5rem; background-color: #761c19;color: #eeeeee}
+a{color: #eeeeee}
+input{color: #0f0f0f}

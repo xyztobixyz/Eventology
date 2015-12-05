@@ -1,25 +1,26 @@
 <form action="#">
+    <h1>Anmelden</h1>
     <div class="row">
-        <div class="col-xs-6"><p>Name</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.name" /></div>
+        <div class="col-xs-2"><p>Name</p></div>
+        <div class="col-xs-2"><input data-ng-model="guest.name" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><p>Beitrag</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.contribution" /></div>
+        <div class="col-xs-2"><p>Beitrag</p></div>
+        <div class="col-xs-2"><input data-ng-model="guest.contribution" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><p>Kommentar</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.comment" /></div>
+        <div class="col-xs-2"><p>Kommentar</p></div>
+        <div class="col-xs-2"><input data-ng-model="guest.comment" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><p>Absagen</p></div>
-        <div class="col-xs-6"><input type="checkbox" data-ng-model="guest.canceled" /></div>
+        <div class="col-xs-2"><p>Absagen</p></div>
+        <div class="col-xs-2"><input type="checkbox" data-ng-model="guest.canceled" /></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6"><input type="submit" data-ng-click="create(guest)"></div>
+        <div class="col-xs-2"><input type="submit" class="btn btn" data-ng-click="create(guest)"></div>
     </div>
 </form>
