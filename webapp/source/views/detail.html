@@ -7,52 +7,52 @@
         <div class="row"><div class="col-xs-2">{{event.location.zipCode}}</div></div>
         <div class="row"><div class="col-xs-2">{{event.location.city}}</div></div>
 
-    <div class="col-xs-6"><p>Adresse:</p></div>
-    <div class="col-xs-6">
-        <div class="row">{{event.location.name}}</div>
-        <div class="row">{{event.location.street}}</div>
-        <div class="row">{{event.location.zipcode}} {{event.location.city}}</div>
+        <div class="col-xs-6"><p>Adresse:</p></div>
+        <div class="col-xs-6">
+            <div class="row">{{event.location.name}}</div>
+            <div class="row">{{event.location.street}}</div>
+            <div class="row">{{event.location.zipcode}} {{event.location.city}}</div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Von:</p></div>
-    <div class="col-xs-2">{{event.times.begin|date:"dd.MM.yyyy' um 'hh:mm"}}</div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Bis:</p></div>
-    <div class="col-xs-2">{{event.times.end|date:"dd.MM.yyyy' um 'hh:mm"}}</div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Beschreibung</p></div>
-    <div class="col-xs-2">
-        {{event.description}}
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Von:</p></div>
+        <div class="col-xs-6">{{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}}</div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Zielgruppe</p></div>
-    <div class="col-xs-2">
-        {{event.targetGroup}}
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Bis:</p></div>
+        <div class="col-xs-6">{{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}</div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Gästemaximum</p></div>
-    <div class="col-xs-2">
-        {{event.maximalAmountOfGuests}}
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Beschreibung</p></div>
+        <div class="col-xs-6">
+            {{event.description}}
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Beitragsmöglichkeit</p></div>
-    <div class="col-xs-2">
-        {{event.contributionsDescription}}
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Zielgruppe</p></div>
+        <div class="col-xs-6">
+            {{event.targetGroup}}
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-2"><p>Gäste:</p></div>
-    <div class="col-xs-2">
-        <div ng-repeat="guest in event.guests">
-            <a href="#/events/{{event.id}}/guests/{{guest.id}}">
-                {{guest.name}}
-            </a>
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Gästemaximum</p></div>
+        <div class="col-xs-6">
+            {{event.maximalAmountOfGuests}}
+        </div>
+    </div>
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Beitragsmöglichkeit</p></div>
+        <div class="col-xs-6">
+            {{event.contributionsDescription}}
+        </div>
+    </div>
+    <div class="row list-group-item">
+        <div class="col-xs-6"><p>Gäste:</p></div>
+        <ul class="col-xs-6 list-group">
+            <li class="list-group-item" ng-repeat="guest in event.guests">
+                <a href="#/events/{{event.id}}/guests/{{guest.id}}">
+                    {{guest.name || "no-name"}}
+                </a>
         </div>
     </div>
 </div>

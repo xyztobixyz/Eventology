@@ -1,20 +1,16 @@
-<center>
-<div class="listTitle">
-    <h1>Upcoming Events</h1><h3>presented by Eventology</h3>
-</div>
+<h1 class="title">Upcoming Events</h1>
 <div>
-    <div data-ng-controller="eventListController">
-        <div data-ng-repeat="event in events">
+    <ul data-ng-controller="eventListController" class="list-group">
+        <li data-ng-repeat="event in events" class="list-group-item">
             <a href="#/events/{{event.id}}">
                 <button type="button" class="btn btn-group">{{event.name}} at {{event.location.name}}<br>
                     from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to
                     {{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
                 </button>
             </a>
-        </div>
+        </li>
         <a href="#/events/new">
             <button type="submit" class="btn btn">Add new Event</button>
         </a>
-    </div>
+    </ul>
 </div>
-</center>
