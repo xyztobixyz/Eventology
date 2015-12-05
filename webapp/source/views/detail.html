@@ -1,18 +1,12 @@
 <h1>{{event.name}}</h1>
-<div class="row">
-    <div class="col-xs-2"><p>Adresse:</p></div>
-    <div class="col-xs-2">
-        <div class="row"><div class="col-xs-2">{{event.location.name}}</div></div>
-        <div class="row"><div class="col-xs-2">{{event.location.street}}</div></div>
-        <div class="row"><div class="col-xs-2">{{event.location.zipCode}}</div></div>
-        <div class="row"><div class="col-xs-2">{{event.location.city}}</div></div>
-
-        <div class="col-xs-6"><p>Adresse:</p></div>
-        <div class="col-xs-6">
-            <div class="row">{{event.location.name}}</div>
-            <div class="row">{{event.location.street}}</div>
-            <div class="row">{{event.location.zipcode}} {{event.location.city}}</div>
-        </div>
+<div class="container-fluid">
+    <div class="row list-group-item">
+            <div class="col-xs-6"><p>Adresse:</p></div>
+            <div class="col-xs-6">
+                <div>{{event.location.name}}</div>
+                <div>{{event.location.street}}</div>
+                <div>{{event.location.zipcode}} {{event.location.city}}</div>
+            </div>
     </div>
     <div class="row list-group-item">
         <div class="col-xs-6"><p>Von:</p></div>
@@ -53,16 +47,16 @@
                 <a href="#/events/{{event.id}}/guests/{{guest.id}}">
                     {{guest.name || "no-name"}}
                 </a>
-        </div>
     </div>
 </div>
+</div>
 <div class="row">
-    <div class="col-xs-2">
+    <div class="col-xs-6">
         <a href="#/events/edit/{{event.id}}">
             <button type="submit" class="btn btn">Event bearbeiten</button>
         </a>
     </div>
-    <div class="col-xs-2">
+    <div class="col-xs-6">
         <a href="#/events/{{event.id}}/guests/new">
             <button type="submit" class="btn btn">Anmelden</button>
         </a>
