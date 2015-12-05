@@ -1,0 +1,30 @@
+body {
+    background-image: url("../img/img_background.jpg");
+}
+
+.header img {
+    display: block;
+    width: 750px;
+    margin: 0 auto;
+}
+
+h1.title {
+    text-align: center;
+}
+
+.container.body-content {
+    background-color: lightgray;
+    margin: 10px auto;
+}
+
+.styleContainer {
+    max-width: 800px;
+    color: #aaaaaa;
+}
+
+.btn {
+    margin-bottom: 5rem;
+    background-color: #761c19;
+    color: #aaaaaa;
+    width: 100%;
+}
