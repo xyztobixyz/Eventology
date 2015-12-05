@@ -1,7 +1,7 @@
 /**
  * Created by Phil on 17.11.2015.
  */
-define([], function(){
+define(['app/model/guest'], function(GuestModel){
     var EventModel = function(id, name, description, targetGroup, contributionsDescription, location, times, maximalAmountOfGuests) {
         this.id=id || Math.floor((Math.random() * 1000000000) + 100000000);
         this.name = name || "";
@@ -41,7 +41,9 @@ define([], function(){
             eventDTO.maximalAmountOfGuests
         );
         if(eventDTO.guests) {
-            event.guests = eventDTO.guests;
+            event.guests = eventDTO.guests.map(function(guestDTO) {
+                return GuestModel.createFromDTO(guestDTO);
+            });
         }
         return event;
     };
