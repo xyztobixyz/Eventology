@@ -3,9 +3,9 @@
     <ul data-ng-controller="eventListController" class="list-group">
         <li data-ng-repeat="event in events" class="list-group-item">
             <a href="#/events/{{event.id}}">
-                <button type="button" class="btn btn-group">{{event.name}} at {{event.location.name}}<br>
-                    from {{event.times.begin|date:"dd.MM.yyyy' at 'hh:mm"}} to
-                    {{event.times.end|date:"dd.MM.yyyy' at 'hh:mm"}}
+                <button type="button" class="btn btn-group">{{event.name}} in der {{event.location.name}}<br>
+                    Vom {{event.times.begin|date:"dd.MM.yyyy' um 'hh:mm"}} bis
+                    {{event.times.end|date:"dd.MM.yyyy' um 'hh:mm"}}
                 </button>
             </a>
         </li>
