@@ -1,60 +1,60 @@
 <h1 class="title">{{event.name || "Neuer Event"}}</h1>
 <form action="#">
     <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><p>Eventname</p></div>
-            <div><input class="form-control" data-ng-model="event.name"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Eventname</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.name"/></div>
         </div>
 
-        <div class="input-group">
-            <div class="input-group-addon"><p>Beschreibung</p></div>
-            <div><input class="form-control" data-ng-model="event.description"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Beschreibung</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.description"/></div>
         </div>
 
-        <div class="input-group">
-            <div class="input-group-addon"><p>Zielgruppe</p></div>
-            <div><input class="form-control" data-ng-model="event.targetGroup"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Zielgruppe</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.targetGroup"/></div>
         </div>
     </div>
     <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><p>Name</p></div>
-            <div><input class="form-control" data-ng-model="event.location.name"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Name</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.location.name"/></div>
         </div>
-        <div class="input-group">
-            <div class="input-group-addon"><p>Adresse</p></div>
-            <div><input class="form-control" data-ng-model="event.location.street"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Adresse</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.location.street"/></div>
         </div>
-        <div class="input-group">
-            <div class="input-group-addon"><p>Postleitzahl</p></div>
-            <div><input class="form-control" data-ng-model="event.location.zipcode"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Postleitzahl</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.location.zipcode"/></div>
         </div>
-        <div class="input-group">
-            <div class="input-group-addon"><p>Ortschaft</p></div>
-            <div><input class="form-control" data-ng-model="event.location.city"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Ortschaft</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.location.city"/></div>
         </div>
     </div>
     <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><p>Von:</p></div>
-            <div><input class="form-control" data-ng-model="event.times.begin"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Von:</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.times.begin"/></div>
         </div>
-        <div class="input-group">
-            <div class="input-group-addon"><p>Bis:</p></div>
-            <div><input class="form-control" data-ng-model="event.times.end"/></div>
-        </div>
-
-        <div class="input-group">
-            <div class="input-group-addon"><p>Beitrag</p></div>
-            <div><input class="form-control" data-ng-model="event.contributionsDescription"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Bis:</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.times.end"/></div>
         </div>
 
-        <div class="input-group">
-            <div class="input-group-addon"><p>max. Anzahl Gäste</p></div>
-            <div><input class="form-control" data-ng-model="event.maximalAmountOfGuests"/></div>
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>Beitrag</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.contributionsDescription"/></div>
         </div>
 
-        <div class="input-group">
+        <div class="row list-group-item">
+            <div class="col-xs-6"><p>max. Anzahl Gäste</p></div>
+            <div class="col-xs-6"><input class="form-control" data-ng-model="event.maximalAmountOfGuests"/></div>
+        </div>
+
+        <div class="row list-group-item">
             <div><input class="form-control btn" type="submit" data-ng-click="create(event)"></div>
         </div>
     </div>

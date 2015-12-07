@@ -19,19 +19,14 @@ h1.title {
 
 .styleContainer {
     max-width: 800px;
-    color: #aaaaaa;
+    color: #000000;
 }
 
 .btn {
     margin-bottom: 5rem;
     background-color: #761c19;
-    color: #aaaaaa;
+    color: #000000;
     width: 100%;
 }
-
-
-body{background-image:url("../img_background.jpg")}
-.styleContainer{color: #eeeeee}
-.btn{margin-bottom: 5rem; background-color: #761c19;color: #eeeeee}
-a{color: #eeeeee}
+a{color: #000000}
 input{color: #0f0f0f}
