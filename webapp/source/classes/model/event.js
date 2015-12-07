@@ -9,22 +9,29 @@ define(['app/model/guest'], function(GuestModel){
         this.targetGroup = targetGroup || "";
         this.contributionsDescription = contributionsDescription;
         this.location = location || {name:"", street:"", zipCode:"", city: ""};
-        this.times = times || {};
+        this.times = {
+            begin: new Date(),
+            end: new Date()
+        };
+        if(times){
+            this.times.begin = new Date(times.begin);
+            this.times.end = new Date(times.end);
+        }
         this.maximalAmountOfGuests = maximalAmountOfGuests || 100;
         Object.defineProperty(this, 'begin', {
             get:function() {
-                return this.times.begin;
+                return new Date(this.times.begin);
             },
             set: function(begin){
-                this.times.begin=begin;
+                this.times.begin=new Date(begin);
             }
         });
         Object.defineProperty(this, 'end', {
             get:function(){
-                return this.times.end;
+                return new Date(this.times.end);
             },
             set:function(end){
-                this.times.end=end;
+                this.times.end=new Date(end);
             }
         });
     };
