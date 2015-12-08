@@ -28,7 +28,7 @@ require.config({
 
 
 require(['libraries/jasmine-boot'], function () {
-    require(['tests/controllers/eventListControllerTest', 'tests/controllers/listControllerTests'], function(){
+    require(['tests/controllers/eventListControllerTest', 'tests/controllers/listControllerTests', 'tests/controllers/storageTest'], function(){
         //trigger Jasmine
         window.onload();
     });
