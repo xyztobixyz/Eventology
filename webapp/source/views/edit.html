@@ -2,7 +2,9 @@
 <form action="#" name="editEventForm">
     <div class="form-group">
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Eventname</p></div>
+            <div class="col-xs-6">
+                <p>Eventname</p>
+            </div>
             <div class="col-xs-6"><input name="eventName" class="form-control" data-ng-model="event.name"/>
                 <span style="color:red" ng-show="editEventForm.eventName.$dirty &&editEventForm.eventName.$invalid">
                     <span ng-show="editEventForm.eventName.$error.required">
@@ -12,9 +14,12 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Beschreibung</p></div>
+            <div class="col-xs-6">
+                <p>Beschreibung</p>
+            </div>
             <div class="col-xs-6"><input name="eventDescription" class="form-control" data-ng-model="event.description"/>
-                <span style="color:red" ng-show="editEventForm.eventDescription.$dirty &&editEventForm.eventDescription.$invalid">
+                <span style="color:red" ng-show="editEventForm.eventDescription.$dirty
+                && editEventForm.eventDescription.$invalid">
                     <span ng-show="editEventForm.eventDescription.$error.required">
                         Beschreibung eingeben.
                     </span>
@@ -22,16 +27,21 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Zielgruppe</p></div>
+            <div class="col-xs-6">
+                <p>Zielgruppe</p>
+            </div>
             <div class="col-xs-6"><input class="form-control" data-ng-model="event.targetGroup"/></div>
         </div>
     </div>
 
     <div class="form-group">
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Name</p></div>
+            <div class="col-xs-6">
+                <p>Name</p>
+            </div>
             <div class="col-xs-6"><input name="eventLocationName" class="form-control" data-ng-model="event.location.name"/>
-                <span style="color:red" ng-show="editEventForm.eventLocationName.$dirty &&editEventForm.eventLocationName.$invalid">
+                <span style="color:red" ng-show="editEventForm.eventLocationName.$dirty
+                && editEventForm.eventLocationName.$invalid">
                     <span ng-show="editEventForm.eventLocationName.$error.required">
                         Name eingeben.
                     </span>
@@ -39,9 +49,12 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Adresse</p></div>
+            <div class="col-xs-6">
+                <p>Adresse</p>
+            </div>
             <div class="col-xs-6"><input name="eventLocationStreet" class="form-control" data-ng-model="event.location.street"/>
-                <span style="color:red" ng-show="editEventForm.eventLocationStreet.$dirty &&editEventForm.eventLocationStreet.$invalid">
+                <span style="color:red" ng-show="editEventForm.eventLocationStreet.$dirty
+                && editEventForm.eventLocationStreet.$invalid">
                     <span ng-show="editEventForm.eventLocationStreet.$error.required">
                         Adresse eingeben.
                     </span>
@@ -49,9 +62,12 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Postleitzahl</p></div>
-            <div class="col-xs-6"><input name="eventLocationZipcode" class="form-control" data-ng-model="event.location.zipcode"/>
-                <span style="color:red" ng-show="editEventForm.eventLocationZipcode.$dirty &&editEventForm.eventLocationZipcode.$invalid">
+            <div class="col-xs-6">
+                <p>Postleitzahl</p>
+            </div>
+            <div class="col-xs-6"><input name="eventLocationZipcode" type="number" class="form-control" data-ng-model="event.location.zipcode"/>
+                <span style="color:red" ng-show="editEventForm.eventLocationZipcode.$dirty
+                && editEventForm.eventLocationZipcode.$invalid">
                     <span ng-show="editEventForm.eventLocationZipcode.$error.required">
                         Postleitzahl eingeben.
                     </span>
@@ -59,9 +75,12 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Ortschaft</p></div>
+            <div class="col-xs-6">
+                <p>Ortschaft</p>
+            </div>
             <div class="col-xs-6"><input name="eventLocationCity" class="form-control" data-ng-model="event.location.city"/>
-            <span style="color:red" ng-show="editEventForm.eventLocationCity.$dirty &&editEventForm.eventLocationCity.$invalid">
+            <span style="color:red" ng-show="editEventForm.eventLocationCity.$dirty
+            && editEventForm.eventLocationCity.$invalid">
                     <span ng-show="editEventForm.eventLocationCity.$error.required">
                         Ortschaft eingeben.
                     </span>
@@ -71,7 +90,9 @@
     </div>
     <div class="form-group">
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Von:</p></div>
+            <div class="col-xs-6">
+                <p>Von:</p>
+            </div>
             <div class="col-xs-6"><input name="eventBegin" class="form-control" type="datetime-local" data-ng-model="event.times.begin"/>
             <span style="color:red" ng-show="editEventForm.eventBegin.$dirty &&editEventForm.eventBegin.$invalid">
                     <span ng-show="editEventForm.eventBegin.$error.required">
@@ -81,7 +102,9 @@
             </div>
         </div>
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Bis:</p></div>
+            <div class="col-xs-6">
+                <p>Bis:</p>
+            </div>
             <div class="col-xs-6"><input name="eventEnd" class="form-control" type="datetime-local" data-ng-model="event.times.end"/>
                 <span style="color:red" ng-show="editEventForm.eventEnd.$dirty &&editEventForm.eventEnd.$invalid">
                     <span ng-show="editEventForm.eventEnd.$error.required">
@@ -92,13 +115,17 @@
         </div>
 
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>Beitrag</p></div>
+            <div class="col-xs-6">
+                <p>Beitrag</p>
+            </div>
             <div class="col-xs-6"><input class="form-control" data-ng-model="event.contributionsDescription"/></div>
         </div>
 
         <div class="row list-group-item">
-            <div class="col-xs-6"><p>max. Anzahl Gäste</p></div>
-            <div class="col-xs-6"><input name="eventMax" class="form-control" data-ng-model="event.maximalAmountOfGuests"/>
+            <div class="col-xs-6">
+                <p>max. Anzahl Gäste</p>
+            </div>
+            <div class="col-xs-6"><input name="eventMax" type="number" class="form-control" data-ng-model="event.maximalAmountOfGuests"/>
                 <span style="color:red" ng-show="editEventForm.eventMax.$dirty &&editEventForm.eventMax.$invalid">
                     <span ng-show="editEventForm.eventMax.$error.required">
                         Max Anz Gäste eingeben.
