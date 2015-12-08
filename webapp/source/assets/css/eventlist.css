@@ -19,12 +19,15 @@ h1.title {
 
 .styleContainer {
     max-width: 800px;
-    color: #aaaaaa;
+    color: #000000;
 }
 
-.btn {
+.btn{
     margin-bottom: 5rem;
     background-color: #761c19;
-    color: #aaaaaa;
+    color: lightgray;
     width: 100%;
+}
+.btn:hover{
+    color: white;
 }
