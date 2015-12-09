@@ -5,9 +5,9 @@
         <div class="col-xs-6">
             <p>Name</p>
         </div>
-        <div class="col-xs-6"><input name="guestName" data-ng-model="guest.name" />
+        <div class="col-xs-6"><input ng-required="true" name="guestName" data-ng-model="guest.name" class="form-control"/>
             <span style="color:red" ng-show="editGuestForm.guestName.$dirty && editGuestForm.guestName.$invalid">
-                <span ng-show="editGuestForm.eventName.$error.required">
+                <span ng-show="editGuestForm.guestName.$error.required">
                     Name eingeben.
                 </span>
             </span>
@@ -18,7 +18,7 @@
         <div class="col-xs-6">
             <p>Beitrag</p>
         </div>
-        <div class="col-xs-6"><input name="guestContribution" data-ng-model="guest.contribution" />
+        <div class="col-xs-6"><input ng-required="true" name="guestContribution" data-ng-model="guest.contribution" class="form-control"/>
             <span style="color:red" ng-show="editGuestForm.guestContribution.$dirty && editGuestForm.guestContribution.$invalid">
                 <span ng-show="editGuestForm.guestContribution.$error.required">
                     Beitrag eingeben.
@@ -31,7 +31,7 @@
         <div class="col-xs-6">
             <p>Kommentar</p>
         </div>
-        <div class="col-xs-6"><input name="guestComment" data-ng-model="guest.comment" />
+        <div class="col-xs-6"><input ng-required="true" name="guestComment" data-ng-model="guest.comment" class="form-control"/>
             <span style="color:red" ng-show="editGuestForm.guestComment.$dirty && editGuestForm.guestComment.$invalid">
                 <span ng-show="editGuestForm.guestComment.$error.required">
                     Kommentar eingeben.
