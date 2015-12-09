@@ -78,7 +78,7 @@ define(['app/controllers/eventListController', 'app/model/event', 'frameworks/an
                     expect(eventListController.scope.events.length).toBe(3);
                 });
 
-                it('event names', function(){
+                it('event ids', function(){
                     expect(eventListController.scope.events[0].id).toBe("1234567891");
                     expect(eventListController.scope.events[1].id).toBe("1234567892");
                     expect(eventListController.scope.events[2].id).toBe("1234567893");
@@ -90,58 +90,58 @@ define(['app/controllers/eventListController', 'app/model/event', 'frameworks/an
                     expect(eventListController.scope.events[2].name).toBe("TestEvent3");
                 });
 
-                it('event names', function(){
+                it('event description', function(){
                     expect(eventListController.scope.events[0].description).toBe("Eine Beschreibung so schoen wie nichts!1");
                     expect(eventListController.scope.events[1].description).toBe("Eine Beschreibung so schoen wie nichts!2");
                     expect(eventListController.scope.events[2].description).toBe("Eine Beschreibung so schoen wie nichts!3");
                 });
 
-                it('event names', function(){
+                it('event target groups', function(){
                     expect(eventListController.scope.events[0].targetGroup).toBe("WOW1");
                     expect(eventListController.scope.events[1].targetGroup).toBe("WOW2");
                     expect(eventListController.scope.events[2].targetGroup).toBe("WOW3");
                 });
 
-                it('event names', function(){
+                it('event contributions', function(){
                     expect(eventListController.scope.events[0].contributionsDescription).toBe("Mitbringen was zu haben ist1");
                     expect(eventListController.scope.events[1].contributionsDescription).toBe("Mitbringen was zu haben ist2");
                     expect(eventListController.scope.events[2].contributionsDescription).toBe("Mitbringen was zu haben ist3");
                 });
 
-                it('event names', function(){
+                it('event location name', function(){
                     expect(eventListController.scope.events[0].location.name).toBe("Test1");
                     expect(eventListController.scope.events[1].location.name).toBe("Test2");
                     expect(eventListController.scope.events[2].location.name).toBe("Test3");
                 });
 
-                it('event names', function(){
+                it('event location street', function(){
                     expect(eventListController.scope.events[0].location.street).toBe("Teststr 1");
                     expect(eventListController.scope.events[1].location.street).toBe("Teststr 2");
                     expect(eventListController.scope.events[2].location.street).toBe("Teststr 3");
                 });
 
-                it('event names', function(){
+                it('event location plz', function(){
                     expect(eventListController.scope.events[0].location.zipCode).toBe(1111);
                     expect(eventListController.scope.events[1].location.zipCode).toBe(2222);
                     expect(eventListController.scope.events[2].location.zipCode).toBe(3333);
                 });
 
-                it('event names', function(){
+                it('event location city', function(){
                     expect(eventListController.scope.events[0].location.city).toBe("Stadt1");
                     expect(eventListController.scope.events[1].location.city).toBe("Stadt2");
                     expect(eventListController.scope.events[2].location.city).toBe("Stadt3");
                 });
 
-                it('event names', function(){
-                    expect(eventListController.scope.events[0].times.begin).toBe(new Date("2015-12-12T12:12:00Z"));
-                    expect(eventListController.scope.events[1].times.begin).toBe(new Date("2015-12-12T12:12:00Z"));
-                    expect(eventListController.scope.events[2].times.begin).toBe(new Date("2015-12-12T12:12:00Z"));
+                it('event begin', function(){
+                    expect(eventListController.scope.events[0].times.begin.toString()).toBe(new Date("2015-12-12T12:12:00Z").toString());
+                    expect(eventListController.scope.events[1].times.begin.toString()).toBe(new Date("2015-12-12T12:12:00Z").toString());
+                    expect(eventListController.scope.events[2].times.begin.toString()).toBe(new Date("2015-12-12T12:12:00Z").toString());
                 });
 
-                it('event names', function(){
-                    expect(eventListController.scope.events[0].times.end).toBe(new Date("2016-12-12T12:12:00Z"));
-                    expect(eventListController.scope.events[1].times.end).toBe(new Date("2016-12-12T12:12:00Z"));
-                    expect(eventListController.scope.events[2].times.end).toBe(new Date("2016-12-12T12:12:00Z"));
+                it('event end', function(){
+                    expect(eventListController.scope.events[0].times.end.toString()).toBe(new Date("2016-12-12T12:12:00Z").toString());
+                    expect(eventListController.scope.events[1].times.end.toString()).toBe(new Date("2016-12-12T12:12:00Z").toString());
+                    expect(eventListController.scope.events[2].times.end.toString()).toBe(new Date("2016-12-12T12:12:00Z").toString());
                 });
             });
         });
