@@ -1,8 +1,6 @@
 define(['app/controllers/eventListController', 'app/model/event', 'frameworks/angular', 'libraries/angularMocks'],
     function (EventListController, EventModel, Angular, AngularMocks) {
         'use strict';
-        var serverURL="http://127.0.0.1:8080";
-        var path= "/api";
         var scope, eventStorage;
 
         beforeEach(AngularMocks.inject(function($injector) {
