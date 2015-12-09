@@ -1,23 +1,49 @@
 <h1 class="title">{{guest.name || "Neuer Gast"}}</h1>
-<form action="#">
+<form action="#" name="editGuestForm">
     <h1>Anmelden</h1>
     <div class="row list-group-item">
-        <div class="col-xs-6"><p>Name</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.name" /></div>
+        <div class="col-xs-6">
+            <p>Name</p>
+        </div>
+        <div class="col-xs-6"><input name="guestName" data-ng-model="guest.name" />
+            <span style="color:red" ng-show="editGuestForm.guestName.$dirty && editGuestForm.guestName.$invalid">
+                <span ng-show="editGuestForm.eventName.$error.required">
+                    Name eingeben.
+                </span>
+            </span>
+        </div>
     </div>
 
     <div class="row list-group-item">
-        <div class="col-xs-6"><p>Beitrag</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.contribution" /></div>
+        <div class="col-xs-6">
+            <p>Beitrag</p>
+        </div>
+        <div class="col-xs-6"><input name="guestContribution" data-ng-model="guest.contribution" />
+            <span style="color:red" ng-show="editGuestForm.guestContribution.$dirty && editGuestForm.guestContribution.$invalid">
+                <span ng-show="editGuestForm.guestContribution.$error.required">
+                    Beitrag eingeben.
+                </span>
+            </span>
+        </div>
     </div>
 
     <div class="row list-group-item">
-        <div class="col-xs-6"><p>Kommentar</p></div>
-        <div class="col-xs-6"><input data-ng-model="guest.comment" /></div>
+        <div class="col-xs-6">
+            <p>Kommentar</p>
+        </div>
+        <div class="col-xs-6"><input name="guestComment" data-ng-model="guest.comment" />
+            <span style="color:red" ng-show="editGuestForm.guestComment.$dirty && editGuestForm.guestComment.$invalid">
+                <span ng-show="editGuestForm.guestComment.$error.required">
+                    Kommentar eingeben.
+                </span>
+            </span>
+        </div>
     </div>
 
     <div class="row list-group-item">
-        <div class="col-xs-6"><p>Absagen</p></div>
+        <div class="col-xs-6">
+            <p>Absagen</p>
+        </div>
         <div class="col-xs-6"><input type="checkbox" data-ng-model="guest.canceled" /></div>
     </div>
 
