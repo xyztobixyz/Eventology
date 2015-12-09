@@ -42,13 +42,24 @@
     </div>
     <div class="row list-group-item">
         <div class="col-xs-6"><p>Gäste:</p></div>
-        <ul class="col-xs-6 list-group">
-            <li class="list-group-item" ng-repeat="guest in event.guests">
-                <a href="#/events/{{event.id}}/guests/{{guest.id}}" ng-hide="guest.canceled">
-                    {{guest.name || "no-name"}}
-                </a>
-            </li>
-        </ul>
+        <div class="col-xs-6">
+            <ul class="list-group">
+                <li class="list-group-item active">Angemledete Gäste:</li>
+                <li class="list-group-item" ng-repeat="guest in event.guests" ng-hide="guest.canceled">
+                    <a href="#/events/{{event.id}}/guests/{{guest.id}}" >
+                        {{guest.name || "no-name"}}
+                    </a>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item active">Abgemeldete Gäste:</li>
+                <li class="list-group-item" ng-repeat="guest in event.guests" ng-show="guest.canceled">
+                    <a href="#/events/{{event.id}}/guests/{{guest.id}}" >
+                        {{guest.name || "no-name"}}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 </div>
