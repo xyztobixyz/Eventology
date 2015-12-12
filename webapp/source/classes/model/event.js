@@ -17,7 +17,7 @@ define(['app/model/guest'], function(GuestModel){
             this.times.begin = new Date(times.begin);
             this.times.end = new Date(times.end);
         }
-        this.maximalAmountOfGuests = maximalAmountOfGuests || 100;
+        this.maximalAmountOfGuests = maximalAmountOfGuests || 10;
         Object.defineProperty(this, 'begin', {
             get:function() {
                 return new Date(this.times.begin);

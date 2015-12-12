@@ -4,6 +4,18 @@ define([],function(){
         this.scope = $scope;
         eventStore.getEvent($routeParams.eventId, function(event){
             this.scope.event = event;
+
+            this.scope.maxAmountReached = (function() {
+                var numResGuests = 0;
+                event.guests.forEach(function (guest) {
+                    if(!guest.canceled){
+                        numResGuests++;
+                        console.log(numResGuests);
+                    }
+                });
+                return event.maximalAmountOfGuests < numResGuests;
+            }());
+
         }.bind(this), function(){});
     };
 
